@@ -1,9 +1,7 @@
 import React, {PropTypes} from 'react';
 
-import styles from './index.css';
-
 const Container = props =>
-  <div className={styles.container}>
+  <div className="min-vh-100 flex flex-column">
     {props.children}
   </div>;
 

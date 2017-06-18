@@ -1,20 +1,4 @@
-.page {
-  display: flex;
-  flex-direction: column;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  width: 100%;
-  max-width: var(--maxWidth);
-  padding: 1rem 0.75rem;
-}
-
-.hero {
-  /* fallback, mainly visible when hero image is loading */
-  background-color: var(--colorSecondary);
+.radialGradient {
   /* fallback when there is no hero image */
   background:
     radial-gradient(
@@ -24,12 +8,7 @@
     );
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  padding: 5rem 0;
-  padding: 10vh 0;
-  text-align: center;
+.linearGradient {
   background: linear-gradient(
     to bottom,
     var(--colorPrimaryDark),
@@ -37,22 +16,12 @@
   );
 }
 
-.heading {
-  color: var(--colorNeutralLight);
+.textShadow {
   text-shadow:
     0 0 10px var(--colorPrimaryDark),
     0 0 6px var(--colorNeutralDark),
     0 0 2px var(--colorNeutralDark)
   ;
-  letter-spacing: 1px;
-}
-
-.cta {
-  margin-top: 2rem;
-}
-
-.pageContent {
-  margin: 1rem 0;
 }
 
 .body {

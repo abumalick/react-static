@@ -1,27 +1,21 @@
 import React, {PropTypes} from 'react';
-import cx from 'classnames';
+import {Link} from 'phenomic';
 
-import styles from './index.css';
-
-const Button = ({className, secondary, light, big, ...otherProps}) =>
-  <span
-    role="button"
-    {...otherProps}
-    className={cx({
-      [className]: className,
-      [styles.button]: true,
-      [styles.secondary]: secondary,
-      [styles.light]: light,
-      [styles.big]: big,
-    })}
-  />;
+const Button = ({className, children, to, ...otherProps}) =>
+  <div>
+    <Link
+      role="button"
+      to={to}
+      className={`pv2 ph4 br-pill link no-underline white bg-blue grow dib bg-animate ${className}`}
+      {...otherProps}>
+      {children}
+    </Link>
+  </div>;
 
 Button.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  secondary: PropTypes.bool,
-  light: PropTypes.bool,
-  big: PropTypes.bool,
+  to: PropTypes.string.isRequired,
 };
 
 Button.displayName = 'Button';

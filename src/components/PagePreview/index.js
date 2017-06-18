@@ -3,29 +3,25 @@ import {Link} from 'phenomic';
 
 import Button from '../../components/Button';
 
-import styles from './index.css';
-
 const PagePreview = ({__url, title, date, description}) => {
   const pageDate = date ? new Date(date) : null;
 
   return (
-    <div className={styles.wrapper}>
-      <Link to={__url} className={styles.title}>
-        {title}
+    <div className="flex flex-column mw6 center mv3 pv3 ph0">
+      <Link to={__url} className="self-center no-underline underline-hover">
+        <h3>{title}</h3>
+
       </Link>
-      <div className={styles.meta}>
+      <div className="f7 silver">
         {pageDate &&
           <time key={pageDate.toISOString()}>
             {pageDate.toDateString()}
           </time>}
       </div>
-      <div className={styles.description}>
+      <p className="f6">
         {description}
-        {' '}
-      </div>
-      <Link to={__url} className={styles.readMore}>
-        <Button secondary>{'Read More →'}</Button>
-      </Link>
+      </p>
+      <Button to={__url}>{'Read More →'}</Button>
     </div>
   );
 };

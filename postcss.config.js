@@ -19,5 +19,12 @@ module.exports = config => [
     },
   }),
   require('postcss-reporter')(),
-  ...(!config.production ? [require('postcss-browser-reporter')()] : []),
+  ...(config.production
+    ? [
+        require('cssnano')({
+          preset: 'default',
+          autoprefixer: false,
+        }),
+      ]
+    : [require('postcss-browser-reporter')()]),
 ];

@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import Helmet from 'react-helmet';
 import warning from 'warning';
-import {BodyContainer, joinUri, Link} from 'phenomic';
+import {BodyContainer, joinUri} from 'phenomic';
 
 import Button from '../../components/Button';
 import Loading from '../../components/Loading';
@@ -41,30 +41,30 @@ const Page = (
   ];
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-column">
       <Helmet title={metaTitle} meta={meta} />
       {
         <div
-          className={styles.hero}
+          className={`${styles.radialGradient} bg-green`}
           style={
             head.hero && {
               background: `#111 url(${head.hero}) 50% 50% / cover`,
             }
           }>
-          <div className={styles.header}>
-            <div className={styles.wrapper}>
-              <h1 className={styles.heading}>{head.title}</h1>
+          <div className={`flex flex-column pv5 tc ${styles.linearGradient}`}>
+            <div className="flex flex-column self-center w-100 mw8 pa3">
+              <h1 className={`near-white tracked ${styles.textShadow}`}>
+                {head.title}
+              </h1>
               {head.cta &&
-                <Link to={head.cta.link}>
-                  <Button className={styles.cta} light {...head.cta.props}>
-                    {head.cta.label}
-                  </Button>
-                </Link>}
+                <Button to={head.cta.link} className="mt4" {...head.cta.props}>
+                  {head.cta.label}
+                </Button>}
             </div>
           </div>
         </div>
       }
-      <div className={styles.wrapper + ' ' + styles.pageContent}>
+      <div className="flex flex-column self-center w-100 mw7 pv3">
         {header}
         <div className={styles.body}>
           {isLoading ? <Loading /> : <BodyContainer>{body}</BodyContainer>}
