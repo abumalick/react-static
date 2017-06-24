@@ -16,8 +16,10 @@ const Loading = () =>
   <div>
     <Helmet title={'Loading...'} />
     <TopBarProgressIndicator />
-    <div className={styles.loader}>
-      <div className={styles.spinner} />
+    <div className="flex vh-25 justify-center items-center">
+      <div
+        className={`o-0 h4 w4 bw3 br-100 b--solid b--black-20 ${styles.spinner}`}
+      />
     </div>
   </div>;
 
