@@ -138,6 +138,10 @@ export default (config = {}) => {
           },
         },
 
+        {
+          test: /\.ya?ml$/,
+          loader: 'yml-loader',
+        },
         // svg as raw string to be inlined
         {
           test: /\.svg$/,

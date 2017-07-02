@@ -3,21 +3,19 @@ import React, {PropTypes} from 'react';
 import 'tachyons/css/tachyons.css';
 import './index.global.css';
 
-import Container from './components/Container';
-import DefaultHeadMeta from './components/DefaultHeadMeta';
-import Header from './components/Header';
-import Content from './components/Content';
+import Head from './components/Head';
+import Nav from './components/Nav';
 import Footer from './components/Footer';
 
 const AppContainer = props =>
-  <Container>
-    <DefaultHeadMeta />
-    <Header />
-    <Content>
+  <div className="min-vh-100 flex flex-column">
+    <Head />
+    <Nav />
+    <div className="flex-auto flex flex-column items-stretch">
       {props.children}
-    </Content>
+    </div>
     <Footer />
-  </Container>;
+  </div>;
 
 AppContainer.propTypes = {
   children: PropTypes.node,

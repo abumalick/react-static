@@ -1,16 +1,12 @@
 import React from 'react';
+import Blocks from './Blocks';
+import BottomBar from './BottomBar';
+import {footer} from './styles.css';
 
 const Footer = () =>
-  <footer className="tc">
-    {/* If you like Phenomic, this is a way to share the love ;) */}
-    <p>
-      <a href={process.env.PHENOMIC_HOMEPAGE} className="f7 o-60 no-underline">
-        {'Website generated with '}
-        <span className="fw6">
-          {`<${process.env.PHENOMIC_NAME} />`}
-        </span>
-      </a>
-    </p>
+  <footer className={`bg-near-black light-gray ${footer}`}>
+    <Blocks />
+    <BottomBar />
   </footer>;
 
 export default Footer;

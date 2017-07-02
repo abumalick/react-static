@@ -1,0 +1,35 @@
+@media screen and (max-width: 60em) {
+  .bgNearBlackNl {
+    background-color: #111;
+  }
+}
+
+.invisibleNl {
+  height: 0;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 60em) {
+  .invisibleNl {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.top05 {
+  top: .5rem;
+}
+
+.active {
+  backface-visibility: hidden;
+  top: .6rem;
+  transition: 0.55s 0.5s;
+}
+.topActive {
+  transform: rotate(50deg);
+}
+
+.bottomActive {
+  transform: rotate(-410deg);
+}

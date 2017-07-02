@@ -2,7 +2,6 @@
   "private": true,
   "name": "react-static",
   "homepage": "https://react-static.netlify.com",
-  "twitter": "",
   "repository": "https://github.com/asbab/react-static",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
@@ -92,7 +91,7 @@
   "stylelint": {
     "extends": "./node_modules/phenomic/lib/stylelint-config-recommended/index.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.0.0",
@@ -113,6 +112,7 @@
     "history": "^2.0.0",
     "husky": "^0.13.4",
     "lint-staged": "^3.6.1",
+    "marked": "^0.3.6",
     "npm-run-all": "^1.7.0",
     "phenomic": "^0.21.1",
     "postcss-browser-reporter": "^0.5.0",
@@ -135,6 +135,7 @@
     "tachyons": "^4.7.4",
     "warning": "^3.0.0",
     "webpack": "^2.3.0",
-    "whatwg-fetch": "^0.11.0"
+    "whatwg-fetch": "^0.11.0",
+    "yml-loader": "^2.0.1"
   }
 }

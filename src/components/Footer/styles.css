@@ -1,0 +1,6 @@
+.footer a {
+  color: #fff;
+}
+.footer a:active, .footer a:focus, .footer a:hover, .footer a:visited {
+  color: #F4F4F4;
+}

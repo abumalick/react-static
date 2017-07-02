@@ -1,0 +1,32 @@
+logo: assets/logo.png
+menuLeft:
+  - title: Home
+    link: /
+  - title: Contact
+    link: contact/
+menuRight:
+  - title: Github
+    icon: assets/github.svg
+    link: https://github.com/asbab/react-static
+  - title: Twitter
+    icon: assets/twitter.svg
+    link: https://github.com/asbab/react-static
+twitter:
+blocks:
+  - title: Contact
+    icon:
+    content: >-
+      [abumalick@asbab.net](mailto:abumalick@asbab.net)
+
+      [@abumalick on Telegram](https://t.me/abumalick)
+  - title: Timetable
+    icon:
+    content: Available on Saturdays an Sundays
+  - title: Follow us
+    icon:
+    content: 
+footerBottom:
+  left: © Content licensed under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+  center:
+  right:
+
