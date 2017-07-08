@@ -44,8 +44,8 @@ const Page = (
       </Helmet>
       {!header &&
         <Hero
-          buttonLink={head.cta.link}
-          buttonText={head.cta.label}
+          buttonLink={head.cta && head.cta.link}
+          buttonText={head.cta && head.cta.label}
           img={head.hero}
           title={head.title}
         />}
