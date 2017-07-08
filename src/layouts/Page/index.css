@@ -1,29 +1,3 @@
-.radialGradient {
-  /* fallback when there is no hero image */
-  background:
-    radial-gradient(
-      ellipse at 50% 50%,
-      color(var(--colorSecondary) l(+ 10%)) 15%,
-      var(--colorSecondary) 70%
-    );
-}
-
-.linearGradient {
-  background: linear-gradient(
-    to bottom,
-    var(--colorPrimaryDark),
-    color(var(--colorPrimary) a(0.2))
-  );
-}
-
-.textShadow {
-  text-shadow:
-    0 0 10px var(--colorPrimaryDark),
-    0 0 6px var(--colorNeutralDark),
-    0 0 2px var(--colorNeutralDark)
-  ;
-}
-
 .body {
   & a {
     color: var(--colorPrimary);

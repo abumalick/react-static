@@ -3,14 +3,14 @@ import Helmet from 'react-helmet';
 import warning from 'warning';
 import {BodyContainer, joinUri} from 'phenomic';
 
-import Button from '../../components/Button';
+import Hero from '../../components/Hero';
 import Loading from '../../components/Loading';
 
 import styles from './index.css';
 
 const Page = (
-  {isLoading, __filename, __url, head, body, header, footer, children},
-  {metadata: {pkg}},
+  {isLoading, __filename, __url, head, body, header, bodyHeader, children},
+  {metadata: {config}},
 ) => {
   warning(
     typeof head.title === 'string',
@@ -18,58 +18,43 @@ const Page = (
   );
 
   const metaTitle = head.metaTitle ? head.metaTitle : head.title;
-
   const socialImage = head.hero && head.hero.match('://')
     ? head.hero
     : joinUri(process.env.PHENOMIC_USER_URL, head.hero);
 
-  const meta = [
-    {property: 'og:type', content: 'article'},
-    {property: 'og:title', content: metaTitle},
-    {
-      property: 'og:url',
-      content: joinUri(process.env.PHENOMIC_USER_URL, __url),
-    },
-    {property: 'og:image', content: socialImage},
-    {property: 'og:description', content: head.description},
-    {name: 'twitter:card', content: 'summary'},
-    {name: 'twitter:title', content: metaTitle},
-    {name: 'twitter:creator', content: `@${pkg.twitter}`},
-    {name: 'twitter:description', content: head.description},
-    {name: 'twitter:image', content: socialImage},
-    {name: 'description', content: head.description},
-  ];
-
   return (
     <div className="flex flex-column">
-      <Helmet title={metaTitle} meta={meta} />
+      <Helmet>
+        <title>{metaTitle}</title>
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={metaTitle} />
+        <meta
+          property="og:url"
+          content={joinUri(process.env.PHENOMIC_USER_URL, __url)}
+        />
+        <meta property="og:image" content={socialImage} />
+        <meta property="og:description" content={head.description} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={metaTitle} />
+        {config.twitter &&
+          <meta name="twitter:creator" content={`@${config.twitter}`} />}
+        <meta name="twitter:description" content={head.description} />
+        <meta property="twitter:image" content={socialImage} />
+        <meta property="description" content={head.description} />
+      </Helmet>
       {!header &&
-        <div
-          className={`${styles.radialGradient} bg-green`}
-          style={
-            head.hero && {
-              background: `#111 url(${head.hero}) 50% 50% / cover`,
-            }
-          }>
-          <div className={`flex flex-column pv5 tc ${styles.linearGradient}`}>
-            <div className="flex flex-column self-center w-100 mw8 pa3">
-              <h1 className={`near-white ${styles.textShadow}`}>
-                {head.title}
-              </h1>
-              {head.cta &&
-                <Button to={head.cta.link} className="mt4" {...head.cta.props}>
-                  {head.cta.label}
-                </Button>}
-            </div>
-          </div>
-        </div>}
+        <Hero
+          buttonLink={head.cta.link}
+          buttonText={head.cta.label}
+          img={head.hero}
+          title={head.title}
+        />}
       <div className="flex flex-column self-center w-100 mw7 pv3">
-        {header}
+        {bodyHeader}
         <div className={styles.body}>
           {isLoading ? <Loading /> : <BodyContainer>{body}</BodyContainer>}
         </div>
         {children}
-        {footer}
       </div>
     </div>
   );
@@ -83,7 +68,7 @@ Page.propTypes = {
   head: PropTypes.object.isRequired,
   body: PropTypes.string,
   header: PropTypes.element,
-  footer: PropTypes.element,
+  bodyHeader: PropTypes.element,
 };
 
 Page.contextTypes = {

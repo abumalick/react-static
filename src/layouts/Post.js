@@ -10,7 +10,7 @@ const Post = props => {
   return (
     <Page
       {...props}
-      header={
+      bodyHeader={
         <div>
           <header className="flex justify-center o-60 mb3 f6">
             {pageDate &&

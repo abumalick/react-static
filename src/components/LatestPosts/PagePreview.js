@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'phenomic';
 
-import Button from './Button';
+import Button from '../Button';
 
 const PagePreview = ({__url, title, date, description}) => {
   const pageDate = date ? new Date(date) : null;

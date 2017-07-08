@@ -4,5 +4,5 @@
   "prettier.bracketSpacing": false,
   "prettier.jsxBracketSameLine": true,
   "prettier.trailingComma": "all",
-  "editor.formatOnSave": false
+  "editor.formatOnSave": true
 }
