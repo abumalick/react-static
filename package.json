@@ -133,6 +133,7 @@
     "style-loader": "^0.18.2",
     "stylelint": "^7.11.1",
     "tachyons": "^4.7.4",
+    "url-loader": "^0.5.9",
     "warning": "^3.0.0",
     "webpack": "^2.3.0",
     "whatwg-fetch": "^0.11.0",

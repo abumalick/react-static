@@ -130,22 +130,17 @@ export default (config = {}) => {
           }),
         },
         {
-          test: /\.(html|ico|jpe?g|png|gif|eot|otf|webp|ttf|woff|woff2)$/,
-          loader: 'file-loader',
+          test: /\.(html|ico|jpe?g|png|gif|eot|otf|webp|ttf|woff|woff2|svg)$/,
+          loader: 'url-loader',
           query: {
+            limit: 1000,
             name: '[path][name].[hash].[ext]',
             context: path.join(__dirname, config.source),
           },
         },
-
         {
           test: /\.ya?ml$/,
           loader: 'yml-loader',
-        },
-        // svg as raw string to be inlined
-        {
-          test: /\.svg$/,
-          loader: 'raw-loader',
         },
       ],
     },

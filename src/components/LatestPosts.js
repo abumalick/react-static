@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import enhanceCollection from 'phenomic/lib/enhance-collection';
 
-import PagesList from '../../components/PagesList';
+import PagesList from './PagesList';
 
 const defaultNumberOfPosts = 6;
 

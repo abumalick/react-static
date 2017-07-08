@@ -43,7 +43,7 @@ const Page = (
   return (
     <div className="flex flex-column">
       <Helmet title={metaTitle} meta={meta} />
-      {
+      {!header &&
         <div
           className={`${styles.radialGradient} bg-green`}
           style={
@@ -53,7 +53,7 @@ const Page = (
           }>
           <div className={`flex flex-column pv5 tc ${styles.linearGradient}`}>
             <div className="flex flex-column self-center w-100 mw8 pa3">
-              <h1 className={`near-white tracked ${styles.textShadow}`}>
+              <h1 className={`near-white ${styles.textShadow}`}>
                 {head.title}
               </h1>
               {head.cta &&
@@ -62,8 +62,7 @@ const Page = (
                 </Button>}
             </div>
           </div>
-        </div>
-      }
+        </div>}
       <div className="flex flex-column self-center w-100 mw7 pv3">
         {header}
         <div className={styles.body}>

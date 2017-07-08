@@ -67,6 +67,7 @@ class Nav extends Component {
               className={`flex items-center flex-column flex-row-l flex-wrap justify-end-l`}>
               {config.menuRight.map(({title, icon, link}) =>
                 <a
+                  key={title}
                   href={link}
                   className={`mv0-l  ph4-l w-100 w-auto-l flex items-center no-underline color-inherit hover-bg-white-20 transition  ${menuOpened
                     ? 'h-100 pa3 mv1'

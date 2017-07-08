@@ -1,4 +1,4 @@
-logo: assets/logo.png
+logo: /assets/logo.png
 menuLeft:
   - title: Home
     link: /
@@ -6,12 +6,11 @@ menuLeft:
     link: contact/
 menuRight:
   - title: Github
-    icon: assets/github.svg
+    icon: /assets/github.svg
     link: https://github.com/asbab/react-static
   - title: Twitter
-    icon: assets/twitter.svg
+    icon: /assets/twitter.svg
     link: https://github.com/asbab/react-static
-twitter:
 blocks:
   - title: Contact
     icon:

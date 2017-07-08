@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
-import LatestPosts from '../../components/LatestPosts';
-import Page from '../Page';
+import LatestPosts from '../components/LatestPosts';
+import Page from './Page';
 
 const Post = props => {
   // it's up to you to choose what to do with this layout ;)

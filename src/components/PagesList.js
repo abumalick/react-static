@@ -1,14 +1,12 @@
 import React, {PropTypes} from 'react';
 
-import PagePreview from '../PagePreview';
-
-import styles from './index.css';
+import PagePreview from './PagePreview';
 
 const PagesList = ({pages}) => {
   return (
     <div>
       {pages.length
-        ? <ul className={styles.list}>
+        ? <ul className="flex flex-column pa0 list">
             {pages.map(page =>
               <li key={page.title}><PagePreview {...page} /></li>,
             )}
